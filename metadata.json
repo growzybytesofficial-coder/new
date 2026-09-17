@@ -1,0 +1,8 @@
+{
+  "name": "ITSAATHI",
+  "description": "IT SAATHI - Complete IT Accessories Partner. CCTV Surveillance, Networking Hardware, SMPS Power Solutions & Hardware Accessories.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

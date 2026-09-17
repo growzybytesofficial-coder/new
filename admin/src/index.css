@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@media print {
+  /* Hide background controls and UI during native window printing */
+  body > *:not(#printable-invoice-iframe) {
+    visibility: hidden !important;
+  }
+  
+  .print\:hidden {
+    display: none !important;
+  }
+
+  .print\:overflow-visible {
+    overflow: visible !important;
+    max-height: none !important;
+  }
+}

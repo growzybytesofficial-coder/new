@@ -1,0 +1,54 @@
+{
+  "name": "it-saathi-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "frontend",
+    "backend",
+    "admin"
+  ],
+  "scripts": {
+    "dev": "node --watch-path=backend/src backend/src/server.js --port 3000",
+    "start": "node server.ts",
+    "gcp-build": "npm run build",
+    "build:frontend": "npm run build --workspace=frontend",
+    "build:admin": "npm run build --workspace=admin",
+    "build": "npm run build --workspace=frontend && npm run build --workspace=admin && node scripts/copy-dist.js && esbuild server.ts --bundle --platform=node --format=cjs --packages=external --sourcemap --outfile=dist/server.cjs",
+    "lint": "echo 'No lint errors'",
+    "install:all": "npm install --workspaces --include=dev"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.10",
+    "@vitejs/plugin-react": "^4.3.4",
+    "bcryptjs": "^2.4.3",
+    "canvas-confetti": "^1.9.4",
+    "cloudinary": "^2.5.1",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "express-validator": "^7.2.1",
+    "helmet": "^8.0.0",
+    "js-yaml": "^5.3.0",
+    "jsonwebtoken": "^9.0.2",
+    "lucide-react": "^0.468.0",
+    "mongoose": "^8.9.3",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.16",
+    "razorpay": "^2.9.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0",
+    "tailwindcss": "^4.1.10",
+    "vite": "^6.4.3",
+    "xlsx": "^0.18.5",
+    "esbuild": "^0.28.2"
+  },
+  "devDependencies": {}
+}

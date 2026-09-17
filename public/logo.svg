@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" width="100%" height="100%" fill="none">
+  <defs>
+    <!-- Brand Gradients -->
+    <linearGradient id="itBlueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0056b3" />
+      <stop offset="50%" stop-color="#0077e6" />
+      <stop offset="100%" stop-color="#00aaff" />
+    </linearGradient>
+
+    <linearGradient id="horseBodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a4d8c" />
+      <stop offset="35%" stop-color="#0066cc" />
+      <stop offset="70%" stop-color="#0099ff" />
+      <stop offset="100%" stop-color="#38bdf8" />
+    </linearGradient>
+
+    <linearGradient id="horseSilverGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="40%" stop-color="#f1f5f9" />
+      <stop offset="75%" stop-color="#cbd5e1" />
+      <stop offset="100%" stop-color="#94a3b8" />
+    </linearGradient>
+
+    <linearGradient id="arcGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#94a3b8" stop-opacity="0.1" />
+      <stop offset="30%" stop-color="#0066cc" />
+      <stop offset="70%" stop-color="#00aaff" />
+      <stop offset="100%" stop-color="#004499" />
+    </linearGradient>
+
+    <linearGradient id="circuitGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="50%" stop-color="#e0f2fe" />
+      <stop offset="100%" stop-color="#bae6fd" />
+    </linearGradient>
+
+    <filter id="subtleGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="shadowFilter" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#003366" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <!-- ================= HORSE EMBLEM ================= -->
+  <g id="horse-symbol" filter="url(#shadowFilter)">
+    <!-- Speed Arc Swoosh Under Hooves -->
+    <path d="M 40 315 C 180 300, 380 270, 610 272 C 680 273, 730 285, 755 295 C 710 286, 640 280, 580 280 C 370 280, 190 305, 55 320 Z" fill="url(#arcGrad)" opacity="0.9" />
+    <path d="M 120 310 C 260 290, 440 275, 600 277" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round" opacity="0.75" />
+
+    <!-- Horse Silhouette Base (Silver-White Rear & Head, Blue Center Flank) -->
+    <!-- Rear Legs & Flank -->
+    <path d="M 115 272 C 145 270, 185 250, 225 240 C 205 248, 175 260, 128 274 C 118 277, 102 279, 95 280 C 105 276, 112 274, 115 272 Z" fill="#64748b" />
+    
+    <!-- Hind Leg Back -->
+    <path d="M 230 235 C 200 245, 160 270, 110 274 C 95 275, 88 282, 105 280 C 130 277, 180 255, 220 240 C 235 235, 255 220, 275 205 C 260 215, 245 228, 230 235 Z" fill="#0284c7" />
+
+    <!-- Flowing Mane Strands (Left/Back) -->
+    <path d="M 290 85 C 250 85, 205 105, 165 140 C 145 158, 125 185, 95 205 C 80 215, 60 225, 40 235 C 70 228, 105 215, 140 190 C 180 160, 220 135, 270 120 C 285 115, 305 112, 320 110 C 305 100, 298 90, 290 85 Z" fill="url(#horseSilverGrad)" />
+    <path d="M 245 130 C 200 155, 155 195, 110 230 C 85 250, 60 265, 45 272 C 75 260, 115 238, 155 205 C 200 170, 245 140, 295 125 Z" fill="#94a3b8" opacity="0.6" />
+    <path d="M 270 145 C 220 180, 170 230, 115 270 C 145 250, 195 205, 245 168 C 265 155, 290 142, 315 135 Z" fill="#0284c7" opacity="0.5" />
+
+    <!-- Main Mane Locks Flowing from Crest -->
+    <path d="M 460 48 C 420 52, 370 70, 330 95 C 285 125, 250 160, 230 195 C 245 165, 285 130, 335 102 C 375 80, 420 65, 465 58 Z" fill="url(#horseSilverGrad)" />
+    <path d="M 520 40 C 480 42, 435 55, 395 78 C 355 102, 320 135, 295 170 C 315 140, 355 110, 400 88 C 440 68, 485 52, 530 46 Z" fill="#e2e8f0" />
+    <path d="M 575 52 C 545 48, 500 55, 460 72 C 420 90, 385 120, 360 150 C 380 125, 420 98, 465 82 C 505 68, 545 60, 580 58 Z" fill="#cbd5e1" />
+
+    <!-- Horse Head, Ears & Neck -->
+    <!-- Ears -->
+    <path d="M 648 60 C 655 48, 668 40, 678 42 C 675 55, 665 68, 655 78 Z" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5" />
+    <path d="M 625 65 C 632 50, 642 42, 650 45 C 648 58, 640 70, 632 78 Z" fill="#cbd5e1" />
+
+    <!-- Horse Face & Snout -->
+    <path d="M 632 78 C 650 82, 675 98, 695 120 C 715 142, 725 165, 715 178 C 705 190, 685 190, 670 178 C 660 170, 655 160, 652 148 C 645 158, 630 168, 615 172 C 575 182, 540 160, 520 140 C 560 145, 600 135, 625 112 C 630 102, 632 90, 632 78 Z" fill="url(#horseSilverGrad)" />
+
+    <!-- Muzzle / Jaw -->
+    <path d="M 695 120 C 720 145, 735 170, 718 185 C 705 195, 685 190, 672 178 C 685 175, 698 165, 698 152 C 698 140, 690 130, 682 122 Z" fill="#f1f5f9" />
+    <circle cx="682" cy="138" r="5" fill="#0f172a" />
+    <circle cx="683.5" cy="136.5" r="1.5" fill="#ffffff" />
+    <!-- Nostril -->
+    <ellipse cx="712" cy="172" rx="3.5" ry="2" fill="#475569" transform="rotate(-20 712 172)" />
+
+    <!-- Upper Body Chest / Shoulder (Silver to Metallic Transition) -->
+    <path d="M 520 140 C 560 165, 600 200, 625 240 C 600 235, 570 215, 540 190 C 505 160, 465 135, 420 115 C 455 120, 490 128, 520 140 Z" fill="url(#horseSilverGrad)" />
+    <path d="M 545 190 C 585 230, 620 270, 645 315 C 635 310, 620 295, 605 275 C 580 245, 550 215, 515 195 Z" fill="#cbd5e1" />
+
+    <!-- Front Forelegs Leaping -->
+    <!-- Front Right Leg -->
+    <path d="M 570 235 C 605 260, 645 285, 690 305 C 710 315, 730 330, 755 355 C 740 350, 725 338, 710 325 C 670 295, 630 268, 595 245 Z" fill="url(#horseSilverGrad)" />
+    <!-- Front Right Hoof -->
+    <path d="M 750 350 L 768 368 C 762 375, 750 375, 742 368 L 735 355 Z" fill="#0066cc" />
+
+    <!-- Front Left Leg (Bent forward) -->
+    <path d="M 525 245 C 555 265, 580 295, 595 330 C 590 338, 575 342, 565 335 C 555 310, 535 285, 505 265 Z" fill="#0077e6" />
+    <path d="M 585 330 L 600 348 C 595 355, 582 355, 575 348 L 570 335 Z" fill="#0a4d8c" />
+
+    <!-- Central Tech Torso (Vibrant Cyan-Blue with Digital Circuitry) -->
+    <path d="M 235 230 C 265 190, 310 160, 365 142 C 420 125, 475 125, 525 145 C 500 175, 465 210, 420 238 C 365 272, 305 285, 245 275 C 220 270, 205 255, 235 230 Z" fill="url(#horseBodyGrad)" />
+
+    <!-- Flank Muscle Shading -->
+    <path d="M 260 250 C 310 260, 360 250, 410 225 C 455 200, 490 170, 515 145 C 470 165, 420 190, 370 215 C 320 240, 275 250, 260 250 Z" fill="#0055b3" opacity="0.4" />
+
+    <!-- Rear Left Leg (Stretched backward in gallop) -->
+    <path d="M 245 275 C 210 285, 170 300, 125 315 C 105 322, 85 328, 65 335 C 75 325, 95 315, 115 305 C 160 282, 205 265, 245 252 Z" fill="#0066cc" />
+    <!-- Rear Left Hoof -->
+    <path d="M 70 332 L 52 342 C 50 336, 56 328, 64 326 L 75 328 Z" fill="#004499" />
+
+    <!-- Rear Right Leg -->
+    <path d="M 285 270 C 260 295, 225 325, 185 350 C 165 362, 145 372, 125 382 C 135 370, 155 358, 175 345 C 210 320, 245 295, 275 275 Z" fill="url(#horseSilverGrad)" />
+    <!-- Rear Right Hoof -->
+    <path d="M 130 380 L 115 392 C 110 388, 116 380, 124 376 L 135 376 Z" fill="#475569" />
+
+    <!-- ================= HIGH-TECH CIRCUIT BOARD TRACES ================= -->
+    <g id="circuits" filter="url(#subtleGlow)">
+      <!-- Line 1 (Top) -->
+      <path d="M 280 165 L 385 165 L 405 180 L 450 180" stroke="url(#circuitGlow)" stroke-width="3" stroke-linecap="round" fill="none" />
+      <circle cx="452" cy="180" r="5" fill="#ffffff" stroke="#0099ff" stroke-width="2" />
+      <circle cx="340" cy="165" r="4" fill="#38bdf8" />
+
+      <!-- Line 2 (Upper Middle) -->
+      <path d="M 260 190 L 330 190 L 350 205 L 485 205" stroke="url(#circuitGlow)" stroke-width="3.5" stroke-linecap="round" fill="none" />
+      <circle cx="488" cy="205" r="5.5" fill="#ffffff" stroke="#0077e6" stroke-width="2.5" />
+      <circle cx="300" cy="190" r="4.5" fill="#bae6fd" />
+
+      <!-- Line 3 (Lower Middle with Step) -->
+      <path d="M 245 215 L 305 215 L 325 230 L 440 230" stroke="url(#circuitGlow)" stroke-width="3.5" stroke-linecap="round" fill="none" />
+      <circle cx="442" cy="230" r="5" fill="#ffffff" stroke="#0099ff" stroke-width="2" />
+      <circle cx="370" cy="230" r="4" fill="#38bdf8" />
+
+      <!-- Line 4 (Bottom) -->
+      <path d="M 235 242 L 275 242 L 295 255 L 380 255" stroke="url(#circuitGlow)" stroke-width="3" stroke-linecap="round" fill="none" />
+      <circle cx="382" cy="255" r="4.5" fill="#ffffff" stroke="#0284c7" stroke-width="2" />
+      <circle cx="260" cy="242" r="3.5" fill="#ffffff" />
+    </g>
+  </g>
+
+  <!-- ================= TYPOGRAPHY ================= -->
+  <!-- "IT SAATHI" Header -->
+  <g id="brand-typography">
+    <!-- "IT" in Bold Radiant Cyan-Blue Gradient -->
+    <text x="65" y="440" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Montserrat', sans-serif" font-size="105" font-weight="900" letter-spacing="-1px" fill="url(#itBlueGrad)">IT</text>
+
+    <!-- "SAATHI" in Deep Slate / Charcoal -->
+    <text x="215" y="440" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Montserrat', sans-serif" font-size="105" font-weight="900" letter-spacing="4px" fill="#24303f">SAATHI</text>
+
+    <!-- Subtitle: "COMPLETE IT ACCESSORIES PARTNER" flanked by lines -->
+    <!-- Left horizontal rule -->
+    <line x1="38" y1="488" x2="108" y2="488" stroke="#64748b" stroke-width="1.8" stroke-linecap="round" opacity="0.85" />
+    
+    <!-- Tagline text -->
+    <text x="125" y="493" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Montserrat', sans-serif" font-size="20.5" font-weight="700" letter-spacing="5.5px" fill="#475569">COMPLETE IT ACCESSORIES PARTNER</text>
+    
+    <!-- Right horizontal rule -->
+    <line x1="720" y1="488" x2="775" y2="488" stroke="#64748b" stroke-width="1.8" stroke-linecap="round" opacity="0.85" />
+  </g>
+</svg>

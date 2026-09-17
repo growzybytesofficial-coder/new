@@ -1,0 +1,78 @@
+{
+  "users": [
+    {
+      "_id": "60c72b2f9b1d8b2e5c8b4567",
+      "name": "IT SAATHI Admin",
+      "email": "admin@itsaathi.in",
+      "password": "$2a$10$URxGoVZe/XubJuQsosYDeuclznsGhkE2Wo7wCbB6FNACJKoAwUx5i",
+      "phone": "9927443216",
+      "role": "admin",
+      "forcePasswordChange": true,
+      "addresses": [],
+      "createdAt": "2026-08-16T04:45:20.622Z",
+      "updatedAt": "2026-08-16T04:45:20.622Z"
+    },
+    {
+      "_id": "6aa2cba43939cea8d7ba5752",
+      "name": "Rahul Sharma",
+      "email": "rahul@example.com",
+      "password": "$2a$10$zmPna95AnxxYMZYxtyx2Du5QWf7XDyyrDPDxyYKQctIFRwssL33Dm",
+      "phone": "9876543210",
+      "role": "customer",
+      "companyName": "",
+      "gstin": "",
+      "status": "Active",
+      "addresses": [],
+      "createdAt": "2026-09-10T15:24:20.857Z",
+      "updatedAt": "2026-09-10T15:24:20.857Z"
+    }
+  ],
+  "productimages": [],
+  "orders": [
+    {
+      "_id": "6aa2cb9c3939cea8d7ba574f",
+      "orderId": "JIT-77235",
+      "customerName": "Rahul Sharma",
+      "customerEmail": "rahul@example.com",
+      "customerPhone": "9876543210",
+      "shippingAddress": {
+        "addressLine1": "Shop 12, Station Road",
+        "city": "Agra",
+        "state": "Uttar Pradesh",
+        "pincode": "282001"
+      },
+      "items": [
+        {
+          "id": 1,
+          "name": "25 PIN M/M CABLE",
+          "price": 13,
+          "quantity": 5,
+          "total": 65
+        }
+      ],
+      "totalAmount": 65,
+      "paymentMethod": "COD",
+      "status": "Processing",
+      "createdAt": "2026-09-10T15:24:12.888Z",
+      "updatedAt": "2026-09-10T15:24:46.541Z"
+    }
+  ],
+  "enquiries": [
+    {
+      "_id": "6aa2cb873939cea8d7ba574c",
+      "enquiryId": "ENQ-89127",
+      "name": "Test Visitor",
+      "email": "visitor@example.com",
+      "phone": "9876543210",
+      "city": "",
+      "subject": "General for IT SAATHI",
+      "inquiryType": "Product Inquiry",
+      "message": "Testing inquiry submission",
+      "needCallback": false,
+      "bulkPricing": false,
+      "status": "New",
+      "createdAt": "2026-09-10T15:23:51.979Z",
+      "updatedAt": "2026-09-10T15:23:51.979Z"
+    }
+  ]
+}
