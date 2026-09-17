@@ -15,7 +15,6 @@ import {
   Tag,
   ArrowRight,
   FileText,
-  Download,
 } from 'lucide-react'
 import { useCart } from '../context/CartContext'
 import { useWishlist } from '../context/WishlistContext'
@@ -132,60 +131,50 @@ export default function Navbar() {
   return (
     <>
       {/* Top Banner with dynamic rotating announcement */}
-      <div className="border-b border-slate-900 bg-slate-950 text-white">
+      <div className="border-b border-slate-200 bg-slate-100/95 text-slate-700">
         <div className="container-main flex items-center justify-between py-2 text-xs">
           <div className="flex items-center gap-5">
             <a
               href="tel:8006033345"
-              className="inline-flex items-center gap-1.5 text-white/80 transition hover:text-white"
+              className="inline-flex items-center gap-1.5 text-slate-600 transition hover:text-red-600"
             >
-              <PhoneCall size={13} className="text-red-400" />
+              <PhoneCall size={13} className="text-red-600" />
               <span className="font-semibold">+91 80060 33345</span>
             </a>
             <a
               href="mailto:Support@itsaathi.com"
-              className="hidden sm:inline-flex items-center gap-1.5 text-white/80 transition hover:text-white"
+              className="hidden sm:inline-flex items-center gap-1.5 text-slate-600 transition hover:text-red-600"
             >
-              <Mail size={13} className="text-red-400" />
+              <Mail size={13} className="text-red-600" />
               <span className="font-semibold">Support@itsaathi.com</span>
             </a>
           </div>
 
           {/* Rotating Live Announcement */}
           <div className="hidden md:flex items-center gap-2 overflow-hidden max-w-md lg:max-w-lg">
-            <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-ping shrink-0" />
-            <div key={announcementIdx} className="text-white/90 font-medium truncate animate-fade-in text-xs">
+            <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-ping shrink-0" />
+            <div key={announcementIdx} className="text-slate-800 font-semibold truncate animate-fade-in text-xs">
               {announcements[announcementIdx]}
             </div>
           </div>
 
           {/* Top Quick Links */}
-          <div className="flex items-center gap-4 text-white/80">
-            <Link to="/shop" className="hover:text-white font-medium transition flex items-center gap-1">
-              <ShoppingCart size={13} className="text-red-400" />
+          <div className="flex items-center gap-4 text-slate-600">
+            <Link to="/shop" className="hover:text-red-600 font-medium transition flex items-center gap-1">
+              <ShoppingCart size={13} className="text-red-600" />
               <span>Shop Products</span>
             </Link>
-            <span className="h-3 w-px bg-slate-800" />
-            <Link to="/account" className="hover:text-white font-medium transition flex items-center gap-1">
+            <span className="h-3 w-px bg-slate-300" />
+            <Link to="/account" className="hover:text-red-600 font-medium transition flex items-center gap-1">
               <User size={13} />
               <span>Account / Orders</span>
             </Link>
-            <span className="h-3 w-px bg-slate-800" />
+            <span className="h-3 w-px bg-slate-300" />
             <a
               href="/admin/"
-              className="hidden sm:inline-flex items-center gap-1 text-red-400 hover:text-red-300 font-bold transition"
+              className="hidden sm:inline-flex items-center gap-1 text-red-600 hover:text-red-700 font-bold transition"
             >
               <span>Admin Portal</span>
-            </a>
-            <span className="h-3 w-px bg-slate-800" />
-            <a
-              href="/it-saathi-project.zip"
-              download="it-saathi-project.zip"
-              className="inline-flex items-center gap-1.5 rounded-full bg-emerald-600/90 px-2.5 py-0.5 text-[11px] font-bold text-white hover:bg-emerald-500 shadow-sm transition"
-              title="Download Full Project Source Code (ZIP)"
-            >
-              <Download size={11} />
-              <span>Project ZIP</span>
             </a>
           </div>
         </div>
@@ -367,12 +356,12 @@ export default function Navbar() {
             {/* Dynamic Cart Button with Drawer Trigger */}
             <button
               onClick={openDrawer}
-              className="relative inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2.5 text-xs sm:text-sm font-bold text-white transition hover:bg-red-600 hover:shadow-lg hover:shadow-red-900/20 active:scale-95 shadow-sm"
+              className="relative inline-flex items-center gap-2 rounded-full bg-red-600 px-4 py-2.5 text-xs sm:text-sm font-bold text-white transition hover:bg-red-700 hover:shadow-lg hover:shadow-red-600/25 active:scale-95 shadow-md shadow-red-600/15"
               aria-label="Open cart"
             >
               <ShoppingCart size={17} />
               <span className="hidden sm:inline">Cart</span>
-              <span className="inline-flex min-w-[22px] items-center justify-center rounded-full bg-red-600 sm:bg-white px-1.5 py-0.5 text-xs font-black text-white sm:text-red-700 shadow-sm transition-transform">
+              <span className="inline-flex min-w-[22px] items-center justify-center rounded-full bg-white px-1.5 py-0.5 text-xs font-black text-red-700 shadow-sm transition-transform">
                 {cartCount}
               </span>
             </button>
@@ -415,17 +404,6 @@ export default function Navbar() {
                   Admin Dashboard Panel
                 </span>
                 <ChevronRight size={16} />
-              </a>
-              <a
-                href="/it-saathi-project.zip"
-                download="it-saathi-project.zip"
-                className="flex items-center justify-between rounded-2xl bg-emerald-50 px-4 py-3 text-sm font-bold text-emerald-800 hover:bg-emerald-100 transition-all duration-200"
-              >
-                <span className="flex items-center gap-2">
-                  <Download size={16} className="text-emerald-600" />
-                  Download Full Project ZIP
-                </span>
-                <span className="rounded-full bg-emerald-600 px-2 py-0.5 text-[10px] text-white">ZIP</span>
               </a>
             </div>
 

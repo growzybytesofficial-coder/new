@@ -227,9 +227,9 @@ export default function ProductDetails() {
                 }}
               />
             ) : (
-              <div className="rounded-2xl bg-gradient-to-br from-red-800 to-slate-950 p-8 text-white w-full text-center">
+              <div className="rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 border border-slate-200 p-8 text-slate-800 w-full text-center">
                 <div className="text-2xl font-black">{product.name}</div>
-                <div className="text-xs text-white/70 mt-1">{product.category}</div>
+                <div className="text-xs text-slate-500 mt-1">{product.category}</div>
               </div>
             )}
           </div>
@@ -351,7 +351,7 @@ export default function ProductDetails() {
                 className={`inline-flex items-center justify-center gap-2 rounded-2xl py-4 text-xs sm:text-sm font-black transition-all ${
                   justAdded
                     ? 'bg-emerald-600 text-white'
-                    : 'bg-slate-900 text-white hover:bg-slate-800 hover:shadow-xl'
+                    : 'bg-slate-900 text-white hover:bg-red-600 hover:shadow-lg'
                 }`}
               >
                 {justAdded ? <Check size={18} /> : <ShoppingCart size={18} />}
@@ -360,7 +360,7 @@ export default function ProductDetails() {
 
               <button
                 onClick={handleBuyNow}
-                className="btn-primary py-4 text-xs sm:text-sm justify-center font-black shadow-xl shadow-red-950/20"
+                className="btn-primary py-4 text-xs sm:text-sm justify-center font-black shadow-lg shadow-red-600/20"
               >
                 <Zap size={18} className="mr-1.5" /> Instant Buy Now
               </button>

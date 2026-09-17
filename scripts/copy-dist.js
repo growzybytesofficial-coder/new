@@ -17,16 +17,6 @@ try {
     fs.cpSync(adminDist, adminDest, { recursive: true });
     console.log('✅ Copied admin build to root dist/admin/');
   }
-  
-  // Bundle project source code into zip
-  try {
-    const { execSync } = await import('child_process');
-    if (fs.existsSync(path.resolve(process.cwd(), 'scripts', 'bundle-zip.py'))) {
-      execSync('python3 scripts/bundle-zip.py', { stdio: 'inherit' });
-    }
-  } catch (zipErr) {
-    console.warn('⚠️ Note during bundle-zip:', zipErr.message);
-  }
 } catch (err) {
   console.warn('⚠️ Note during copy-dist:', err.message);
 }

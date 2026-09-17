@@ -76,22 +76,6 @@ app.get(['/health', '/api/health', '/_ah/health', '/_ah/start'], (req, res) => {
   });
 });
 
-// Endpoint to download the full project source code as a ZIP archive
-app.get(['/download-zip', '/api/download-zip', '/it-saathi-project.zip'], (req, res) => {
-  const candidatePaths = [
-    path.resolve(process.cwd(), 'dist', 'it-saathi-project.zip'),
-    path.resolve(process.cwd(), 'frontend', 'public', 'it-saathi-project.zip'),
-    path.resolve(process.cwd(), 'it-saathi-project.zip'),
-  ];
-  const zipFile = candidatePaths.find((p) => fs.existsSync(p));
-  if (zipFile) {
-    res.setHeader('Content-Type', 'application/zip');
-    res.download(zipFile, 'it-saathi-project.zip');
-  } else {
-    res.status(404).json({ success: false, message: 'ZIP archive not found' });
-  }
-});
-
 // Global API rate limiting
 app.use('/api', apiLimiter);
 

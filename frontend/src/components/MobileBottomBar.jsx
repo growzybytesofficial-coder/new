@@ -8,7 +8,7 @@ export default function MobileBottomBar() {
   const navItems = [
     { to: '/', label: 'Home', icon: Home },
     { to: '/shop', label: 'Shop', icon: ShoppingBag },
-    { to: '/gmail', label: 'Gmail', icon: Mail },
+    { to: '/contact', label: 'Contact', icon: Mail },
     { to: '/account', label: 'Account', icon: User },
   ]
 

@@ -66,7 +66,7 @@ export default function Layout() {
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-20 sm:bottom-6 right-6 z-40 hidden sm:flex h-11 w-11 items-center justify-center rounded-full bg-slate-900 text-white shadow-xl shadow-slate-950/20 transition-all duration-300 hover:bg-red-600 hover:scale-110 active:scale-95 animate-pop-in cursor-pointer"
+          className="fixed bottom-20 sm:bottom-6 right-6 z-40 hidden sm:flex h-11 w-11 items-center justify-center rounded-full bg-white border border-slate-300 text-slate-700 shadow-xl shadow-slate-900/10 transition-all duration-300 hover:bg-red-600 hover:text-white hover:border-red-600 hover:scale-110 active:scale-95 animate-pop-in cursor-pointer"
           title="Scroll to Top"
           aria-label="Scroll to top"
         >

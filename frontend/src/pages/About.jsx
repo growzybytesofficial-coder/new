@@ -335,25 +335,25 @@ export default function About() {
               ) : null}
 
               {/* Verified Badge */}
-              <div className="absolute top-4 right-4 inline-flex items-center gap-1.5 rounded-full bg-slate-900/80 backdrop-blur-md px-3 py-1.5 text-xs font-bold text-white border border-white/20 shadow-lg z-10">
-                <BadgeCheck size={14} className="text-emerald-400" />
+              <div className="absolute top-4 right-4 inline-flex items-center gap-1.5 rounded-full bg-white/90 backdrop-blur-md px-3 py-1.5 text-xs font-bold text-slate-900 border border-slate-200 shadow-md z-10">
+                <BadgeCheck size={14} className="text-emerald-600" />
                 <span>Verified Founder</span>
               </div>
 
               {/* Bottom Glass Card Overlay */}
-              <div className="absolute inset-x-4 bottom-4 rounded-[22px] border border-white/20 bg-slate-950/85 p-5 text-white backdrop-blur-md shadow-2xl">
+              <div className="absolute inset-x-4 bottom-4 rounded-[22px] border border-slate-200/90 bg-white/95 p-5 text-slate-900 backdrop-blur-md shadow-xl">
                 <div className="flex items-center justify-between">
-                  <p className="text-xs font-bold uppercase tracking-wider text-red-400">
+                  <p className="text-xs font-bold uppercase tracking-wider text-red-700">
                     Proprietor & Founder
                   </p>
-                  <span className="text-[11px] font-mono text-slate-300">
+                  <span className="text-[11px] font-mono text-slate-500">
                     IT SAATHI Hardware Solutions
                   </span>
                 </div>
 
-                <h2 className="mt-1.5 text-2xl font-black tracking-tight text-white">Adarsh Jain</h2>
+                <h2 className="mt-1.5 text-2xl font-black tracking-tight text-slate-900">Adarsh Jain</h2>
 
-                <p className="mt-2 text-xs sm:text-sm leading-relaxed text-slate-200">
+                <p className="mt-2 text-xs sm:text-sm leading-relaxed text-slate-600">
                   Leading IT SAATHI with a commitment to high-grade CCTV accessories, certified networking hardware, transparent pricing, and 24/7 technical support for installers and enterprises across India.
                 </p>
               </div>

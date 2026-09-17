@@ -137,36 +137,36 @@ export default function Shop() {
   return (
     <div className="space-y-8 pb-16">
       {/* Header Banner */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-red-950 py-12 text-white shadow-md">
+      <section className="relative overflow-hidden bg-gradient-to-br from-red-50/70 via-white to-slate-50 border-b border-slate-200/80 py-12 text-slate-900 shadow-xs">
         <div className="container-main relative">
           <div className="max-w-3xl space-y-3">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-red-600/30 border border-red-500/40 px-3.5 py-1 text-xs font-black uppercase tracking-wider text-red-300">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-red-100 border border-red-200 px-3.5 py-1 text-xs font-black uppercase tracking-wider text-red-700">
               <Sparkles size={13} /> Complete Wholesale Catalog
             </span>
-            <h1 className="text-3xl sm:text-5xl font-black tracking-tight">
+            <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900">
               Hardware Products & Accessories
             </h1>
-            <p className="text-xs sm:text-sm text-slate-300 max-w-xl leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-600 max-w-xl leading-relaxed">
               Explore CCTV infrastructure, high-frequency connectors, heavy SMPS converters, multi-gigabit Ethernet cabling, and installation tools with live pricing.
             </p>
           </div>
 
           <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3">
-            <div className="rounded-2xl bg-white/10 p-4 border border-white/10 backdrop-blur-md">
-              <div className="text-2xl font-black text-red-400">{products.length}+</div>
-              <div className="text-xs font-bold text-white mt-0.5">Live Products</div>
+            <div className="rounded-2xl bg-white p-4 border border-slate-200 shadow-xs">
+              <div className="text-2xl font-black text-red-600">{products.length}+</div>
+              <div className="text-xs font-bold text-slate-800 mt-0.5">Live Products</div>
             </div>
-            <div className="rounded-2xl bg-white/10 p-4 border border-white/10 backdrop-blur-md">
-              <div className="text-2xl font-black text-amber-400">{categories.length - 1}</div>
-              <div className="text-xs font-bold text-white mt-0.5">Hardware Categories</div>
+            <div className="rounded-2xl bg-white p-4 border border-slate-200 shadow-xs">
+              <div className="text-2xl font-black text-amber-600">{categories.length - 1}</div>
+              <div className="text-xs font-bold text-slate-800 mt-0.5">Hardware Categories</div>
             </div>
-            <div className="rounded-2xl bg-white/10 p-4 border border-white/10 backdrop-blur-md">
-              <div className="text-2xl font-black text-emerald-400">100%</div>
-              <div className="text-xs font-bold text-white mt-0.5">Genuine Certification</div>
+            <div className="rounded-2xl bg-white p-4 border border-slate-200 shadow-xs">
+              <div className="text-2xl font-black text-emerald-600">100%</div>
+              <div className="text-xs font-bold text-slate-800 mt-0.5">Genuine Certification</div>
             </div>
-            <div className="rounded-2xl bg-white/10 p-4 border border-white/10 backdrop-blur-md">
-              <div className="text-2xl font-black text-blue-400">Same Day</div>
-              <div className="text-xs font-bold text-white mt-0.5">Dispatch Available</div>
+            <div className="rounded-2xl bg-white p-4 border border-slate-200 shadow-xs">
+              <div className="text-2xl font-black text-blue-600">Same Day</div>
+              <div className="text-xs font-bold text-slate-800 mt-0.5">Dispatch Available</div>
             </div>
           </div>
         </div>
@@ -363,7 +363,7 @@ export default function Shop() {
                   onClick={() => setCategory(cat)}
                   className={`px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition cursor-pointer ${
                     category === cat
-                      ? 'bg-slate-900 text-white shadow-sm'
+                      ? 'bg-red-600 text-white shadow-sm'
                       : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-50'
                   }`}
                 >
@@ -500,7 +500,7 @@ export default function Shop() {
         <div className="fixed inset-0 z-50 overflow-hidden lg:hidden">
           <div
             onClick={() => setMobileFiltersOpen(false)}
-            className="fixed inset-0 bg-slate-950/60 backdrop-blur-sm animate-fade-in"
+            className="fixed inset-0 bg-slate-900/40 backdrop-blur-sm animate-fade-in"
           />
           <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
             <div className="w-screen max-w-sm bg-white p-6 shadow-2xl flex flex-col justify-between">

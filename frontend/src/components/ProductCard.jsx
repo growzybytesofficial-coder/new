@@ -109,16 +109,16 @@ export default function ProductCard({ product, onQuickView }) {
                 }}
               />
             ) : (
-              <div className="flex h-full w-full flex-col items-center justify-center rounded-2xl bg-gradient-to-br from-red-800 to-slate-900 p-4 text-center text-white">
+              <div className="flex h-full w-full flex-col items-center justify-center rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 border border-slate-200 p-4 text-center text-slate-800">
                 <div className="text-sm font-black uppercase tracking-wider">{product.name}</div>
-                <div className="mt-1 text-[11px] text-white/70">{product.category}</div>
+                <div className="mt-1 text-[11px] text-slate-500">{product.category}</div>
               </div>
             )}
 
             {/* Quick View Hover Pill */}
             <button
               onClick={handleOpenQuickView}
-              className="absolute bottom-3 left-1/2 -translate-x-1/2 translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 inline-flex items-center gap-1.5 rounded-full bg-slate-900/90 backdrop-blur-md px-4 py-1.5 text-xs font-bold text-white shadow-lg hover:bg-red-600 cursor-pointer"
+              className="absolute bottom-3 left-1/2 -translate-x-1/2 translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 inline-flex items-center gap-1.5 rounded-full bg-white/95 text-slate-900 border border-slate-200/90 backdrop-blur-md px-4 py-1.5 text-xs font-bold shadow-md hover:bg-red-600 hover:text-white hover:border-red-600 cursor-pointer"
             >
               <Eye size={13} /> Quick View
             </button>
@@ -182,7 +182,7 @@ export default function ProductCard({ product, onQuickView }) {
                 className={`inline-flex items-center justify-center rounded-xl p-2.5 transition-all duration-300 cursor-pointer ${
                   justAdded
                     ? 'bg-emerald-600 text-white scale-105 shadow-md shadow-emerald-600/30'
-                    : 'bg-slate-900 text-white hover:bg-red-600 hover:shadow-md hover:shadow-red-600/20 active:scale-95'
+                    : 'bg-red-600 text-white hover:bg-red-700 hover:shadow-md hover:shadow-red-600/25 active:scale-95'
                 }`}
                 title="Add to cart"
                 aria-label="Add to cart"

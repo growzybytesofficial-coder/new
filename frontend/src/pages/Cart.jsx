@@ -201,14 +201,14 @@ export default function Cart() {
 
           {/* Order Details Card */}
           <div className="mt-8 overflow-hidden rounded-3xl border border-slate-200 bg-white text-left shadow-xl">
-            <div className="bg-slate-950 p-6 text-white flex justify-between items-center flex-wrap gap-4">
+            <div className="bg-red-50 border-b border-red-100 p-6 text-slate-900 flex justify-between items-center flex-wrap gap-4">
               <div>
-                <span className="text-[10px] uppercase tracking-widest text-slate-400">Order Reference</span>
-                <h3 className="text-xl font-bold tracking-tight text-red-500">{placedOrder.orderId}</h3>
+                <span className="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Order Reference</span>
+                <h3 className="text-xl font-black tracking-tight text-red-700">{placedOrder.orderId}</h3>
               </div>
               <div className="text-right">
-                <span className="text-[10px] uppercase tracking-widest text-slate-400">Grand Total</span>
-                <p className="text-xl font-black">₹{placedOrder.totalAmount.toLocaleString('en-IN')}</p>
+                <span className="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Grand Total</span>
+                <p className="text-2xl font-black text-slate-900 font-mono">₹{placedOrder.totalAmount.toLocaleString('en-IN')}</p>
               </div>
             </div>
 
@@ -621,7 +621,7 @@ export default function Cart() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full rounded-full bg-slate-950 py-3.5 text-xs sm:text-sm font-black text-white transition hover:bg-red-600 focus:ring-4 focus:ring-red-100 disabled:opacity-50 mt-2 shadow-xl inline-flex items-center justify-center gap-2"
+                  className="w-full rounded-full bg-red-600 hover:bg-red-700 py-3.5 text-xs sm:text-sm font-black text-white transition focus:ring-4 focus:ring-red-100 disabled:opacity-50 mt-2 shadow-lg shadow-red-600/20 inline-flex items-center justify-center gap-2"
                 >
                   {isSubmitting ? (
                     <>

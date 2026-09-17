@@ -313,59 +313,59 @@ export default function Home() {
 
           {/* Right Column: Hero Visual Card with Dynamic Glow */}
           <div className="relative">
-            <div className="relative rounded-[32px] overflow-hidden border border-slate-800 bg-slate-950 p-6 sm:p-8 text-white shadow-2xl shadow-slate-950/40">
+            <div className="relative rounded-[32px] overflow-hidden border border-slate-200/90 bg-white p-6 sm:p-8 text-slate-900 shadow-xl shadow-slate-900/5">
               {/* Background gradient pattern */}
-              <div className="absolute inset-0 bg-gradient-to-br from-red-950/60 via-slate-950 to-slate-900" />
-              <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-red-600/20 blur-3xl animate-pulse" />
+              <div className="absolute inset-0 bg-gradient-to-br from-red-50/60 via-white to-slate-50/90" />
+              <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-red-100/40 blur-3xl animate-pulse" />
 
               <div className="relative z-10 space-y-6">
                 <div className="flex items-center justify-between">
-                  <span className="rounded-full bg-blue-600/30 border border-blue-500/40 px-3.5 py-1 text-xs font-black uppercase tracking-wider text-blue-300">
+                  <span className="rounded-full bg-blue-50 border border-blue-200 px-3.5 py-1 text-xs font-black uppercase tracking-wider text-blue-700">
                     ⚡ Official Partner
                   </span>
-                  <div className="flex items-center gap-1 text-amber-400 text-xs font-bold">
-                    <Star size={14} className="fill-amber-400" />
-                    <span>Top Rated Store</span>
+                  <div className="flex items-center gap-1 text-amber-500 text-xs font-bold">
+                    <Star size={14} className="fill-amber-400 text-amber-400" />
+                    <span className="text-slate-700">Top Rated Store</span>
                   </div>
                 </div>
 
                 {/* Official Brand Logo Block */}
-                <div className="rounded-2xl bg-white/5 p-4 border border-white/10 backdrop-blur-md">
-                  <Logo variant="horizontal" size="md" isDarkBg={true} />
+                <div className="rounded-2xl bg-white p-4 border border-slate-200 shadow-sm">
+                  <Logo variant="horizontal" size="md" isDarkBg={false} />
                 </div>
 
                 <div>
-                  <h3 className="text-2xl sm:text-3xl font-black tracking-tight leading-tight">
+                  <h3 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight leading-tight">
                     Smart Tech, Trusted Service
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-300 mt-2 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
                     Direct warehouse supply for high-demand CCTV infrastructure, power conversion, copper wiring, and server room equipment.
                   </p>
                 </div>
 
                 {/* Highlight Matrix */}
                 <div className="grid grid-cols-2 gap-3">
-                  <div className="rounded-2xl bg-white/10 p-4 border border-white/10 backdrop-blur-md">
-                    <div className="text-[11px] font-bold text-red-300 uppercase">Focus Hardware</div>
-                    <div className="text-sm font-black text-white mt-1">CCTV & Power Supplies</div>
-                    <div className="text-[10px] text-slate-300 mt-0.5">Heavy gauge copper alloys</div>
+                  <div className="rounded-2xl bg-slate-50 p-4 border border-slate-200/80 shadow-xs">
+                    <div className="text-[11px] font-bold text-red-700 uppercase">Focus Hardware</div>
+                    <div className="text-sm font-black text-slate-900 mt-1">CCTV & Power Supplies</div>
+                    <div className="text-[10px] text-slate-500 mt-0.5">Heavy gauge copper alloys</div>
                   </div>
-                  <div className="rounded-2xl bg-white/10 p-4 border border-white/10 backdrop-blur-md">
-                    <div className="text-[11px] font-bold text-amber-300 uppercase">Wholesale Slab</div>
-                    <div className="text-sm font-black text-white mt-1">Direct Dealer Margins</div>
-                    <div className="text-[10px] text-slate-300 mt-0.5">Verified B2B invoices</div>
+                  <div className="rounded-2xl bg-slate-50 p-4 border border-slate-200/80 shadow-xs">
+                    <div className="text-[11px] font-bold text-amber-700 uppercase">Wholesale Slab</div>
+                    <div className="text-sm font-black text-slate-900 mt-1">Direct Dealer Margins</div>
+                    <div className="text-[10px] text-slate-500 mt-0.5">Verified B2B invoices</div>
                   </div>
                 </div>
 
                 {/* Instant Helpline Card */}
-                <div className="rounded-2xl bg-gradient-to-r from-red-600 to-orange-600 p-4 flex items-center justify-between text-white shadow-lg">
+                <div className="rounded-2xl bg-gradient-to-r from-red-600 to-orange-600 p-4 flex items-center justify-between text-white shadow-md shadow-red-600/20">
                   <div>
                     <div className="text-xs font-bold uppercase tracking-wider opacity-90">Direct Orders & Inquiries</div>
                     <div className="text-lg font-black tracking-wide mt-0.5">+91 80060 33345</div>
                   </div>
                   <a
                     href="tel:8006033345"
-                    className="rounded-full bg-white text-slate-950 px-4 py-2 text-xs font-black hover:bg-slate-100 transition shadow"
+                    className="rounded-full bg-white text-slate-900 px-4 py-2 text-xs font-black hover:bg-slate-50 transition shadow"
                   >
                     Call Desk
                   </a>
@@ -400,40 +400,40 @@ export default function Home() {
 
       {/* 3. FLASH DEALS WITH LIVE COUNTDOWN TIMER */}
       <section className="container-main">
-        <div className="rounded-[32px] bg-gradient-to-br from-slate-950 via-slate-900 to-red-950 p-6 sm:p-10 text-white shadow-2xl border border-slate-800 relative overflow-hidden">
-          <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-red-600/10 blur-3xl pointer-events-none" />
+        <div className="rounded-[32px] bg-gradient-to-br from-red-50/70 via-white to-slate-50 p-6 sm:p-10 text-slate-900 shadow-xl border border-red-100 relative overflow-hidden">
+          <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-red-100/40 blur-3xl pointer-events-none" />
 
           {/* Header & Live Timer */}
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 pb-8 border-b border-slate-800">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 pb-8 border-b border-red-100">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full bg-red-600/30 border border-red-500/40 px-3.5 py-1 text-xs font-black uppercase tracking-wider text-red-400 mb-2">
-                <Flame size={14} className="text-red-400 animate-pulse" /> Limited Time Flash Sale
+              <div className="inline-flex items-center gap-2 rounded-full bg-red-100 border border-red-200 px-3.5 py-1 text-xs font-black uppercase tracking-wider text-red-700 mb-2">
+                <Flame size={14} className="text-red-600 animate-pulse" /> Limited Time Flash Sale
               </div>
-              <h2 className="text-2xl sm:text-4xl font-black tracking-tight">
+              <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight">
                 Wholesale Hot Deals of the Day
               </h2>
-              <p className="text-xs sm:text-sm text-slate-400 mt-1">
+              <p className="text-xs sm:text-sm text-slate-600 mt-1">
                 Grab heavy discounts on popular cables, 12V power units, and adapters before time expires.
               </p>
             </div>
 
             {/* Countdown Clock */}
-            <div className="flex items-center gap-3 bg-slate-900/90 border border-slate-700 p-3 rounded-2xl shrink-0">
-              <Clock size={20} className="text-red-400" />
+            <div className="flex items-center gap-3 bg-white border border-red-200 p-3 rounded-2xl shrink-0 shadow-sm">
+              <Clock size={20} className="text-red-600" />
               <div className="flex items-center gap-2 text-center">
-                <div className="bg-slate-950 px-3 py-1.5 rounded-xl border border-slate-800">
-                  <span className="text-lg font-black text-white font-mono">{String(timeLeft.hours).padStart(2, '0')}</span>
-                  <span className="block text-[9px] uppercase text-slate-400 font-bold">Hours</span>
+                <div className="bg-slate-50 px-3 py-1.5 rounded-xl border border-slate-200 shadow-xs">
+                  <span className="text-lg font-black text-slate-900 font-mono">{String(timeLeft.hours).padStart(2, '0')}</span>
+                  <span className="block text-[9px] uppercase text-slate-500 font-bold">Hours</span>
                 </div>
-                <span className="font-black text-red-500 text-lg">:</span>
-                <div className="bg-slate-950 px-3 py-1.5 rounded-xl border border-slate-800">
-                  <span className="text-lg font-black text-white font-mono">{String(timeLeft.minutes).padStart(2, '0')}</span>
-                  <span className="block text-[9px] uppercase text-slate-400 font-bold">Mins</span>
+                <span className="font-black text-red-600 text-lg">:</span>
+                <div className="bg-slate-50 px-3 py-1.5 rounded-xl border border-slate-200 shadow-xs">
+                  <span className="text-lg font-black text-slate-900 font-mono">{String(timeLeft.minutes).padStart(2, '0')}</span>
+                  <span className="block text-[9px] uppercase text-slate-500 font-bold">Mins</span>
                 </div>
-                <span className="font-black text-red-500 text-lg">:</span>
-                <div className="bg-slate-950 px-3 py-1.5 rounded-xl border border-slate-800">
-                  <span className="text-lg font-black text-red-400 font-mono">{String(timeLeft.seconds).padStart(2, '0')}</span>
-                  <span className="block text-[9px] uppercase text-slate-400 font-bold">Secs</span>
+                <span className="font-black text-red-600 text-lg">:</span>
+                <div className="bg-slate-50 px-3 py-1.5 rounded-xl border border-slate-200 shadow-xs">
+                  <span className="text-lg font-black text-red-600 font-mono">{String(timeLeft.seconds).padStart(2, '0')}</span>
+                  <span className="block text-[9px] uppercase text-slate-500 font-bold">Secs</span>
                 </div>
               </div>
             </div>
@@ -654,7 +654,7 @@ export default function Home() {
 
       {/* 10. VIP WHOLESALE CTA BANNER */}
       <section className="container-main">
-        <div className="rounded-[32px] bg-gradient-to-r from-red-700 via-red-600 to-slate-950 p-8 sm:p-12 text-white shadow-2xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="rounded-[32px] bg-gradient-to-r from-red-700 via-red-600 to-rose-700 p-8 sm:p-12 text-white shadow-xl shadow-red-900/10 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="space-y-3 max-w-xl text-center md:text-left">
             <span className="rounded-full bg-white/20 border border-white/30 px-3.5 py-1 text-[11px] font-black uppercase tracking-wider text-white">
               🚀 Direct B2B Pricing Channel
@@ -662,7 +662,7 @@ export default function Home() {
             <h2 className="text-2xl sm:text-4xl font-black tracking-tight leading-tight">
               Looking for Bulk Reseller Containers or Contractor Orders?
             </h2>
-            <p className="text-xs sm:text-sm text-white/80 leading-relaxed">
+            <p className="text-xs sm:text-sm text-white/90 leading-relaxed">
               Connect directly with Adarsh Jain and our wholesale distribution desk for specialized project pricing, bulk GST quotations, and custom packaging.
             </p>
           </div>
@@ -672,13 +672,13 @@ export default function Home() {
               href="https://wa.me/918006033345?text=Hello%20IT%20SAATHI%2C%20I%20would%20like%20to%20request%20a%20bulk%20wholesale%20quotation."
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white px-7 py-3.5 text-xs sm:text-sm font-black shadow-xl transition-all hover:scale-105 active:scale-95"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white px-7 py-3.5 text-xs sm:text-sm font-black shadow-lg transition-all hover:scale-105 active:scale-95"
             >
               WhatsApp Wholesale Desk
             </a>
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center rounded-full bg-white text-slate-950 hover:bg-slate-100 px-6 py-3.5 text-xs sm:text-sm font-bold shadow-xl transition-all"
+              className="inline-flex items-center justify-center rounded-full bg-white text-red-700 hover:bg-red-50 px-6 py-3.5 text-xs sm:text-sm font-bold shadow-lg transition-all"
             >
               Send Online Inquiry
             </Link>

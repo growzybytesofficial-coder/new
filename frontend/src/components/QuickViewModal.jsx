@@ -69,7 +69,7 @@ export default function QuickViewModal({ product, isOpen, onClose }) {
       {/* Backdrop */}
       <div
         onClick={onClose}
-        className="fixed inset-0 bg-slate-950/70 backdrop-blur-sm transition-opacity animate-fade-in"
+        className="fixed inset-0 bg-slate-900/40 backdrop-blur-sm transition-opacity animate-fade-in"
       />
 
       <div className="flex min-h-full items-center justify-center p-4 text-center sm:p-6">
@@ -118,9 +118,9 @@ export default function QuickViewModal({ product, isOpen, onClose }) {
                     }}
                   />
                 ) : (
-                  <div className="text-center p-6 bg-gradient-to-br from-red-700 to-slate-900 rounded-2xl text-white">
+                  <div className="text-center p-6 bg-gradient-to-br from-slate-100 to-slate-200 border border-slate-200 rounded-2xl text-slate-800">
                     <div className="text-lg font-black">{product.name}</div>
-                    <div className="text-xs text-white/70 mt-1">{product.category}</div>
+                    <div className="text-xs text-slate-500 mt-1">{product.category}</div>
                   </div>
                 )}
               </div>
@@ -202,7 +202,7 @@ export default function QuickViewModal({ product, isOpen, onClose }) {
                     className={`inline-flex items-center justify-center gap-2 rounded-2xl py-3.5 text-xs font-black transition-all ${
                       added
                         ? 'bg-emerald-600 text-white'
-                        : 'bg-slate-900 text-white hover:bg-slate-800 hover:shadow-lg'
+                        : 'bg-red-600 text-white hover:bg-red-700 hover:shadow-lg hover:shadow-red-600/20'
                     }`}
                   >
                     {added ? <Check size={16} /> : <ShoppingCart size={16} />}

@@ -876,7 +876,7 @@ export default function Account() {
                         You have not placed any orders yet. Visit our shop to browse computer parts, CCTV setups, or networking accessories.
                       </p>
                       <div className="mt-6">
-                        <Link to="/shop" className="rounded-full bg-slate-950 px-5 py-2.5 text-xs font-bold text-white hover:bg-red-600 transition shadow-sm">
+                        <Link to="/shop" className="rounded-full bg-red-600 px-5 py-2.5 text-xs font-bold text-white hover:bg-red-700 transition shadow-sm">
                           Browse hardware shop
                         </Link>
                       </div>
@@ -885,27 +885,27 @@ export default function Account() {
                     <div className="space-y-4">
                       {orders.map(order => {
                         return (
-                          <div key={order._id || order.orderId} className="overflow-hidden rounded-2xl border border-slate-100 bg-slate-50/50 hover:bg-slate-50 hover:border-slate-200 transition duration-300">
+                          <div key={order._id || order.orderId} className="overflow-hidden rounded-2xl border border-slate-200 bg-white hover:border-slate-300 transition duration-300 shadow-xs">
                             
                             {/* Order Header */}
-                            <div className="bg-slate-950 p-4 text-white flex justify-between items-center flex-wrap gap-3">
+                            <div className="bg-red-50/70 border-b border-red-100 p-4 text-slate-900 flex justify-between items-center flex-wrap gap-3">
                               <div>
-                                <span className="text-[9px] uppercase tracking-wider text-slate-400 block font-bold">Order ID</span>
-                                <span className="font-black text-red-500 text-sm">{order.orderId}</span>
+                                <span className="text-[9px] uppercase tracking-wider text-slate-500 block font-bold">Order ID</span>
+                                <span className="font-black text-red-700 text-sm">{order.orderId}</span>
                               </div>
                               <div className="text-right sm:text-left">
-                                <span className="text-[9px] uppercase tracking-wider text-slate-400 block font-bold">Date Placed</span>
-                                <span className="text-xs font-bold">{new Date(order.createdAt).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}</span>
+                                <span className="text-[9px] uppercase tracking-wider text-slate-500 block font-bold">Date Placed</span>
+                                <span className="text-xs font-bold text-slate-800">{new Date(order.createdAt).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}</span>
                               </div>
                               <div>
-                                <span className="text-[9px] uppercase tracking-wider text-slate-400 block font-bold">Grand Total</span>
-                                <span className="text-sm font-black text-red-400">₹{order.totalAmount.toLocaleString('en-IN')}</span>
+                                <span className="text-[9px] uppercase tracking-wider text-slate-500 block font-bold">Grand Total</span>
+                                <span className="text-sm font-black text-red-700">₹{order.totalAmount.toLocaleString('en-IN')}</span>
                               </div>
                               <div>
                                 <span className={`inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[10px] font-black uppercase ${
-                                  order.status === 'Delivered' ? 'bg-emerald-500 text-slate-950' :
-                                  order.status === 'Cancelled' ? 'bg-red-500 text-white' :
-                                  order.status === 'Shipped' ? 'bg-blue-500 text-white' : 'bg-red-600 text-white animate-pulse'
+                                  order.status === 'Delivered' ? 'bg-emerald-100 text-emerald-800' :
+                                  order.status === 'Cancelled' ? 'bg-red-100 text-red-800' :
+                                  order.status === 'Shipped' ? 'bg-blue-100 text-blue-800' : 'bg-red-600 text-white animate-pulse'
                                 }`}>
                                   {order.status}
                                 </span>

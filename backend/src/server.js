@@ -29,64 +29,78 @@ async function startServer() {
     console.error('⚠️ Warning setting up frontend routing:', err?.message || err);
   }
 
-  // Determine host and port strictly as required by Google Cloud Run:
-  // 1. Host MUST strictly be 0.0.0.0 for container ingress
+  // Determine host and ports strictly as required by Google Cloud Run:
+  // Host MUST strictly be 0.0.0.0 for container ingress
   const host = '0.0.0.0';
 
-  // 2. Port determination:
-  // - In AI Studio sandboxed container: Nginx runs on NGINX_PORT (8080) and proxies exclusively to port 3000.
-  //   Node server must bind to port 3000 (DEFAULT_APP_PORT).
-  // - In standalone environment without Nginx: bind to process.env.PORT.
-  const portArgIndex = process.argv.indexOf('--port');
-  let targetPort;
+  // Determine all candidate ports to ensure zero-downtime container readiness:
+  // 1. Mandatory Cloud Run port: process.env.PORT (Cloud Run container health check targets this)
+  // 2. Command line argument --port (e.g. --port 3000)
+  // 3. AI Studio sandboxed container proxy port: DEFAULT_APP_PORT or 3000
+  const portsToListen = new Set();
 
+  const portArgIndex = process.argv.indexOf('--port');
   if (portArgIndex !== -1 && process.argv[portArgIndex + 1]) {
-    targetPort = parseInt(process.argv[portArgIndex + 1], 10);
-  } else if (process.env.NGINX_PORT || process.env.DEFAULT_APP_PORT) {
-    targetPort = parseInt(process.env.DEFAULT_APP_PORT || '3000', 10);
-  } else if (process.env.PORT) {
-    targetPort = parseInt(process.env.PORT, 10);
-  } else {
-    targetPort = 3000;
+    const cliPort = parseInt(process.argv[portArgIndex + 1], 10);
+    if (!isNaN(cliPort) && cliPort > 0) {
+      portsToListen.add(cliPort);
+    }
   }
 
-  // Create single authoritative HTTP server
-  const server = http.createServer(app);
+  if (process.env.PORT) {
+    const envPort = parseInt(process.env.PORT, 10);
+    if (!isNaN(envPort) && envPort > 0) {
+      portsToListen.add(envPort);
+    }
+  }
 
-  server.on('error', (err) => {
-    if (err.code === 'EADDRINUSE') {
-      console.warn(`⚠️ Target port ${targetPort} is occupied.`);
-      if (targetPort !== 3000) {
-        console.log('Falling back to listener on port 3000...');
-        server.listen(3000, host, () => {
-          console.log(`🚀 Fallback listener running on http://${host}:3000`);
-        });
+  if (process.env.DEFAULT_APP_PORT) {
+    const defaultPort = parseInt(process.env.DEFAULT_APP_PORT, 10);
+    if (!isNaN(defaultPort) && defaultPort > 0) {
+      portsToListen.add(defaultPort);
+    }
+  }
+
+  // Always ensure port 3000 is included for reverse proxy / local ingress
+  portsToListen.add(3000);
+
+  const activeServers = [];
+
+  for (const port of portsToListen) {
+    const srv = http.createServer(app);
+
+    srv.on('error', (err) => {
+      if (err.code === 'EADDRINUSE') {
+        console.log(`ℹ️ Port ${port} is occupied (e.g. reverse proxy or active listener).`);
         return;
       }
-    }
-    console.error(`Fatal server listener error on port ${targetPort}:`, err.message);
-    process.exit(1);
-  });
+      console.error(`⚠️ Server listener notice on port ${port}:`, err.message);
+    });
 
-  // Strictly bind single listener to host 0.0.0.0 and targetPort
-  server.listen(targetPort, host, () => {
-    console.log(`====================================================`);
-    console.log(`📡 IT SAATHI Server running in ${process.env.NODE_ENV || 'production'} mode`);
-    console.log(`🚀 Strictly bound to: http://${host}:${targetPort}`);
-    console.log(`====================================================`);
-  });
+    try {
+      srv.listen(port, host, () => {
+        console.log(`====================================================`);
+        console.log(`📡 IT SAATHI Server bound to http://${host}:${port}`);
+        console.log(`🚀 Mode: ${process.env.NODE_ENV || 'production'}`);
+        console.log(`====================================================`);
+      });
+      activeServers.push(srv);
+    } catch (listenErr) {
+      console.warn(`⚠️ Could not listen on port ${port}:`, listenErr.message);
+    }
+  }
 
   // Graceful shutdown handlers for Cloud Run container lifecycle
   const handleShutdown = (signal) => {
-    console.log(`Received ${signal}, closing server gracefully...`);
-    server.close(() => {
-      console.log('HTTP server closed successfully.');
-      process.exit(0);
+    console.log(`Received ${signal}, closing all HTTP listeners gracefully...`);
+    activeServers.forEach((srv) => {
+      try {
+        srv.close();
+      } catch (_) {}
     });
     setTimeout(() => {
-      console.warn('Forcefully exiting after timeout');
       process.exit(0);
-    }, 5000);
+    }, 2000).unref();
   };
 
   process.on('SIGTERM', () => handleShutdown('SIGTERM'));

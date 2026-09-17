@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import {
   Upload,
-  Download,
   ArrowDownUp,
   FolderDown,
   Link as LinkIcon,
@@ -960,15 +959,6 @@ function AdminApp() {
             <span className="rounded-full bg-emerald-50 px-2.5 py-1 text-[10px] font-black uppercase text-emerald-700 border border-emerald-100">
               Surveillance Node Active
             </span>
-            <a
-              href="/it-saathi-project.zip"
-              download="it-saathi-project.zip"
-              className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-600/30 bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-800 hover:bg-emerald-600 hover:text-white transition shadow-xs"
-              title="Download Full Project Source Code (ZIP)"
-            >
-              <Download size={13} />
-              <span>Export Project ZIP</span>
-            </a>
           </div>
           <div className="flex items-center gap-4 text-xs font-bold text-slate-600">
             <span>Store ID: <span className="text-slate-900 font-black font-mono">#ITSAATHI-99</span></span>
